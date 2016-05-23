@@ -1,6 +1,6 @@
 {
   "locals": {
-    "url": "http://localhost:8080",
+    "url": "http://antirek.github.io/mobilon_docs/build",
     "name": "Mobilon Docs",
     "owner": "Someone",
     "description": "Документация для пользователей, а также их родителей"
@@ -16,5 +16,6 @@
   "markdown": {
     "smartLists": true,
     "smartypants": true
-  }
+  },
+  "baseUrl": "http://antirek.github.io/mobilon_docs/build"
 }
