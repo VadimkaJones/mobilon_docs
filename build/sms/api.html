@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 3 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap core CSS-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries-->
+    <!--if lt IE 9
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js')
+    -->
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display-->
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand">Справочный центр Мобилон</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling-->
+        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Виртуальная АТС</a></li>
+            <li><a href="/sms/">СМС-рассылка</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h3>СМС-рассылка</h3>
+          <ul>
+            <li><a href="/sms/index.html">Об услуге</a></li>
+            <li><a href="/sms/prepare.html">Настройка</a></li>
+            <li><a href="/sms/send_sms.html">Отправка СМС</a></li>
+            <li><a href="/sms/send_bulk_sms.html">Рассылка СМС</a></li>
+            <li><a href="/sms/statuses.html">Статусы</a></li>
+            <li><a href="/sms/api.html">API</a></li>
+          </ul>
+        </div>
+        <div class="col-md-9"><h2 id="api">API</h2>
+<p>Возможно вам требуется рассылать данные из своих программ? Тогда есть возможность использовать API для рассылки СМС. </p>
+<p>Необходимо отправить http-запрос, указав ключ доступа, номер получателя и текст смс.</p>
+<p>Пример запроса, используя curl: </p>
+<pre><code>curl -X POST --data &quot;key=key&amp;number=8923777XXXX&amp;text=Тест&quot; sms.mobilon.ru/api/send
+</code></pre><p>Отправленные СМС через API также можно увидеть в журнале отправленных смс. </p>
+
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </body>
+</html>
