@@ -17,5 +17,5 @@
     "smartLists": true,
     "smartypants": true
   },
-  "baseUrl": "http://antirek.github.io/mobilon_docs/build"
+  "baseUrl": "/"
 }
