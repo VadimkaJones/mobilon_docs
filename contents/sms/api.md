@@ -49,9 +49,6 @@ curl -X POST --data "key=key&number=8923777XXXX&text=Тест" sms.mobilon.ru/ap
     // устанавливаем заголовки запроса
     ЗаголовокHTTP = Новый Соответствие();
     ЗаголовокHTTP.Вставить("Content-Type", "application/x-www-form-urlencoded");
-    ЗаголовокHTTP.Вставить("Accept-Language", "ru");
-    ЗаголовокHTTP.Вставить("Accept-Charset", "utf-8");
-    ЗаголовокHTTP.Вставить("Content-Language", "ru");
     ЗаголовокHTTP.Вставить("Content-Charset", "utf-8");
    
     // отправляем
