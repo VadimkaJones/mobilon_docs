@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Bootstrap 3 Template
+    title Справочный центр Мобилон
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     // Bootstrap core CSS
     link(href='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css', rel='stylesheet', media='screen')
@@ -12,9 +12,9 @@ html
   body
     include include/navbar
     
-    .container
+    include mixins/menu
 
-      block content
+    block main
 
 
 

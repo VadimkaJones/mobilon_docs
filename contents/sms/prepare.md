@@ -1,6 +1,7 @@
 --- 
 template: sms.jade
-title: Справочный центр
+title: Настройка
+order: 20
 ---
 
 ## Настройка

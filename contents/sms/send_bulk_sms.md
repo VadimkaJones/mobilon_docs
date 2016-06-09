@@ -1,6 +1,7 @@
 --- 
 template: sms.jade
-title: Справочный центр
+title: Рассылка СМС
+order: 40
 ---
 
 ## Рассылка СМС

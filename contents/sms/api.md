@@ -1,6 +1,7 @@
 --- 
 template: sms.jade
-title: Справочный центр
+title: API
+order: 60
 ---
 
 ## API

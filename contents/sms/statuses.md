@@ -1,6 +1,7 @@
 --- 
 template: sms.jade
-title: Справочный центр
+title: Статусы
+order: 50
 ---
 
 ## Статусы СМС

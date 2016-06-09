@@ -1,6 +1,7 @@
 --- 
 template: sms.jade
-title: Справочный центр
+title: Об услуге
+order: 10
 ---
 
 ## Об услуге
