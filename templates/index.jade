@@ -1,9 +1,49 @@
 
 extends layout
 
+style.
+  .my_panel > .panel-body {
+    padding: 0px;
+  }
+  .my_panel > .panel-body > img {
+    width: 100%;
+    height: 100%;
+  }
+  .my_panel > .panel-footer {
+    text-align: center;
+  }
 
 block main
-  center 
-    != page.html
+  .container
+    .row
+      .col-md-4.col-sm-4.col-xs-6
+        .panel.panel-default.my_panel
+          .panel-body
+            img.img-responsive.center-block(src='images/1.png', alt='')
+          .panel-footer
+            h3 Виртуальная АТС
+            
+            a(href='/old/')
+              | Узнать больше
+
+      .col-md-4.col-sm-4.col-xs-6
+        .panel.panel-default.my_panel
+          .panel-body
+            img.img-responsive.center-block(src='images/2.png', alt='')
+          .panel-footer
+            h3 СМС-рассылка
+            
+            a(href='/sms/')
+              | Узнать больше
+
+      .col-md-4.col-sm-4.col-xs-6
+        .panel.panel-default.my_panel
+          .panel-body
+            img.img-responsive.center-block(src='images/3.png', alt='')
+          .panel-footer
+            h3 Звонок с сайта
+            
+            a(href='#')
+              | Узнать больше
 
 
