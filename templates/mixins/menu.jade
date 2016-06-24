@@ -1,13 +1,15 @@
 
-mixin menu(objects_list)
-  - var p;
-  - var q = _.toArray(objects_list).sort(function(a, b) { 
-  -   if (a && b && a.metadata && b.metadata && a.metadata.order && b.metadata.order) {
-  -     if (a.metadata.order < b.metadata.order) {return -1} else {return 1}
-  -   } else { return 0 }
-  - })
-  ul
-  each c in q
-    if c.title
-      li
-        a(href="#{c.url}") #{c.title}
+mixin menu(title, objects_list)
+  div(data-spy="affix", data-offset-top="0", data-offset-bottom="200")
+    h3= title
+    - var p;
+    - var q = _.toArray(objects_list).sort(function(a, b) { 
+    -   if (a && b && a.metadata && b.metadata && a.metadata.order && b.metadata.order) {
+    -     if (a.metadata.order < b.metadata.order) {return -1} else {return 1}
+    -   } else { return 0 }
+    - })
+    ul
+    each c in q
+      if c.title
+        li
+          a(href="#{c.url}") #{c.title}
