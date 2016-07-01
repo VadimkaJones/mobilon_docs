@@ -28,3 +28,7 @@ order: 10
 ### Создайте свой виджет
 
 Не понравился наш стандартный виджет? И хотите сделать свой? Воспользуйтесь нашей библиотекой для заказа обратного звонка: <a href="https://github.com/antirek/webcall-mobilon.js" target="_blank">https://github.com/antirek/webcall-mobilon.js</a>
+
+
+<div id="container"></div>
+<script type='text/javascript' src='http://localhost:3000/include/widget.js/mobilon'></script>
