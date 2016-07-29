@@ -12,22 +12,38 @@ block menu
         ul 
           li 
             a(href="/vpbx/sip.html") Абоненты
-          li Телефонные номера
+          li 
+            a(href="/vpbx/numbers.html") Телефонные номера
           li Маршрутизация
             ul
-              li Расписания
-              li Календари
-              li Очереди
-              li Голосовые меню
-              li И еще +100500... : )
-          li Суперфишки
-            ul
-              li Оценка операторов
-              li Обратный звонок
+              li 
+                a(href="/vpbx/ivr.html") Голосовые меню
+              li 
+                a(href="/vpbx/plan.html") Календари и расписания
+              li 
+                a(href="/vpbx/queues.html") Очереди
+              //li  Группы
+
+          li Дополнительно
+            ul 
+              li Музыка
+              li Группы перехвата
+              li Запись разговоров
+              li Электронный факс
+              li Черный список
+              li И еще...
+      
       li Отчеты
         ul
-          li Отчеты АТС
-          li Отчеты колл-центра
+          li 
+            a(href="/vpbx/reports_pbx.html") Отчеты АТС
+          li 
+            a(href="/vpbx/reports_callcenter.html") Отчеты колл-центра
+
+      li Суперфишки
+        ul
+          li Оценка операторов
+          li Обратный звонок
 
 
 block content
