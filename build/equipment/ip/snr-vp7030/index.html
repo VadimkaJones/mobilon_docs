@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Справочный центр Мобилон</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <!-- Bootstrap core CSS-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries-->
+    <!--if lt IE 9
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js')
+    -->
+    <style>body { padding-top: 70px; }</style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand">Справочный центр Мобилон</a>
+        </div>
+        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/vpbx/">Виртуальная АТС</a></li>
+            <li><a href="/sms/">СМС-рассылка</a></li>
+            <li><a href="/webcall/">Звонок с сайта</a></li>
+            <li><a href="/equipment/">Оборудование</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://24.mobilon.ru/">Техподдержка </a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <ul>     
+            <li>Софтфоны
+              <ul> 
+                <li> <a href="/equipment/softphones/xlite3">X-Lite 3.0</a></li>
+                <li> <a href="/equipment/softphones/xlite4">X-Lite 4.5</a></li>
+                <li> <a href="/equipment/softphones/3cx_win">3CXPhone для Windows</a></li>
+                <li> <a href="/equipment/softphones/3cx_ios">3CXPhone для IOS (iPhone)</a></li>
+                <li> <a href="/equipment/softphones/ekiga">Ekiga</a></li>
+                <li> <a href="/equipment/softphones/microsip">MicroSIP</a></li>
+                <li> <a href="/equipment/softphones/zoiper">Zoiper под iOS(iPhone)</a></li>
+                <li> <a href="/equipment/softphones/csipsimple">CSIPSimple для Android</a></li>
+              </ul>
+            </li>
+            <li>IP-оборудование
+              <ul>
+                <li>Audiocodes
+                  <ul> 
+                    <li> <a href="/equipment/ip/audiocodes-mp202">MP-202</a></li>
+                    <li> <a href="/equipment/ip/audiocodes-hd320">HD320</a></li>
+                  </ul>
+                </li>
+                <li>Linksys
+                  <ul>
+                    <li> <a href="/equipment/ip/linksys-spa8000">SPA8000</a></li>
+                  </ul>
+                </li>
+                <li>Panasonic
+                  <ul>
+                    <li> <a href="/equipment/ip/panasonic-tgp500">TGP500</a></li>
+                    <li> <a href="/equipment/ip/panasonic-tde200">SIP-транк в TDE-200</a></li>
+                  </ul>
+                </li>
+                <li>AddPac
+                  <ul>
+                    <li> <a href="/equipment/ip/addpac-adip90">AP-IP90</a></li>
+                  </ul>
+                </li>
+                <li>D-link
+                  <ul>
+                    <li> <a href="/equipment/ip/dlink-dvg5112">DVG5112S</a></li>
+                    <li> <a href="/equipment/ip/dlink-dph150">DPH150SE</a></li>
+                    <li> <a href="/equipment/ip/dlink-dvg5004">DVG5004S</a></li>
+                  </ul>
+                </li>
+                <li>SNR
+                  <ul>
+                    <li> <a href="/equipment/ip/snr-vp7030">VP7030</a></li>
+                  </ul>
+                </li>
+                <li>Yealink
+                  <ul>
+                    <li> <a href="/equipment/ip/yealink-t28p">T28P</a></li>
+                  </ul>
+                </li>
+                <li>Grandstream
+                  <ul>
+                    <li>GXP1620/1610</li>
+                    <li>GXP1400</li>
+                    <li>DP715</li>
+                  </ul>
+                </li>
+                <li>Cisco
+                  <ul>
+                    <li>SPA122</li>
+                    <li>SPA504G</li>
+                  </ul>
+                </li>
+                <li>IP-PBX Asterisk
+                  <ul>
+                    <li>Настройка IP-PBX Asterisk</li>
+                  </ul>
+                </li>
+                <li>Yota
+                  <ul>
+                    <li>SIP-подключение Gemtek R2</li>
+                  </ul>
+                </li>
+                <li>1С-Битрикс24
+                  <ul>
+                    <li>Подключение 1С-Битрикс24</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-9"><h2 id="-sip-snr-vp7030">Настройка SIP телефона SNR VP7030</h2>
+<p>Настройка этого телефона осуществляется либо через web-интерфейс или из меню самого телефона.</p>
+<p>Для начала надо зайти в меню телефона, нажав кнопку Menu. Затем выбрать пункт «Дополнительно». Для подтверждения нажмите «Ввод» Попросят ввести пароль, пароль – «123» (по умолчанию). Затем выбираем «Сеть-&gt;Режим сети». По умолчанию стоит DHCP, надо изменить на статический режим. Нажимаем «Изменить» и джойстиком влево выбираем режим «Статический». Нажимаем «Сохранить».</p>
+<p>По умолчанию статический IP-адрес устройства на обоих интерфейсах (WAN, LAN) – 192.168.1.179. На компьютере выставляем соответственно IP-адрес из этой подсети, то есть вида 192.168.1.ХХХ, где ХХХ – число от 1 до 255, исключая 179. Форма авторизации выглядит следующим образом(Рисунок 1):</p>
+<p><img src="/equipment/ip/snr-vp7030/1.png" alt=""></p>
+<p>Имя по умолчанию – admin, пароль – admin.</p>
+<p>После успешной авторизации увидим следующее окно(Рисунок 2):</p>
+<p><img src="/equipment/ip/snr-vp7030/2.png" alt=""></p>
+<p>Здесь нам понадобятся вкладки «Сеть», «IP-телефония» и «Телефон».</p>
+<p>Заходим во вкладку «Сеть» и устанавливаем необходимые параметры сети (IP-адрес телефона и т.д.). После всех изменений нажимаем «Применить».</p>
+<p>Затем заходим во вкладку «IP-телефония». Увидим следующее окно(Рисунок 3):</p>
+<p><img src="/equipment/ip/snr-vp7030/3.png" alt=""></p>
+<p>В параметре «Адрес сервера» указываем адрес SIP-сервера.</p>
+<p>В параметре «Имя сервера» можно указать так же IP-адрес сервера или написать Mobilon.</p>
+<p>Порт сервера оставляем 5060.</p>
+<p>Имя пользователя, номер телефона – логин учетной записи.</p>
+<p>Имя на дисплее – вводим любое,  можно ввести логин.</p>
+<p>Пароль пользователя – пароль учетной записи.</p>
+<p>Остальные поля не заполняем, ОБЯЗАТЕЛЬНО ставим галочку «Разрешить регистрацию».</p>
+<p>Нажимаем кнопку «Применить».</p>
+<p>После этого заходим во вкладку «Телефон». Увидим следующее окно(Рисунок 4):</p>
+<p><img src="/equipment/ip/snr-vp7030/4.png" alt=""></p>
+<p>Выставляем кодеки. Стандарт сигналов выбираем «Россия». Затем нажимаем «Применить».</p>
+<p>Телефон настроен, статус регистрации отображается во вкладке IP-Телефония.</p>
+
+        </div>
+      </div>
+    </div>
+    <hr><br><br><br>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-2029674-20', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

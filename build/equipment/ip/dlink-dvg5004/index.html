@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Справочный центр Мобилон</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <!-- Bootstrap core CSS-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries-->
+    <!--if lt IE 9
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js')
+    -->
+    <style>body { padding-top: 70px; }</style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand">Справочный центр Мобилон</a>
+        </div>
+        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/vpbx/">Виртуальная АТС</a></li>
+            <li><a href="/sms/">СМС-рассылка</a></li>
+            <li><a href="/webcall/">Звонок с сайта</a></li>
+            <li><a href="/equipment/">Оборудование</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://24.mobilon.ru/">Техподдержка </a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <ul>     
+            <li>Софтфоны
+              <ul> 
+                <li> <a href="/equipment/softphones/xlite3">X-Lite 3.0</a></li>
+                <li> <a href="/equipment/softphones/xlite4">X-Lite 4.5</a></li>
+                <li> <a href="/equipment/softphones/3cx_win">3CXPhone для Windows</a></li>
+                <li> <a href="/equipment/softphones/3cx_ios">3CXPhone для IOS (iPhone)</a></li>
+                <li> <a href="/equipment/softphones/ekiga">Ekiga</a></li>
+                <li> <a href="/equipment/softphones/microsip">MicroSIP</a></li>
+                <li> <a href="/equipment/softphones/zoiper">Zoiper под iOS(iPhone)</a></li>
+                <li> <a href="/equipment/softphones/csipsimple">CSIPSimple для Android</a></li>
+              </ul>
+            </li>
+            <li>IP-оборудование
+              <ul>
+                <li>Audiocodes
+                  <ul> 
+                    <li> <a href="/equipment/ip/audiocodes-mp202">MP-202</a></li>
+                    <li> <a href="/equipment/ip/audiocodes-hd320">HD320</a></li>
+                  </ul>
+                </li>
+                <li>Linksys
+                  <ul>
+                    <li> <a href="/equipment/ip/linksys-spa8000">SPA8000</a></li>
+                  </ul>
+                </li>
+                <li>Panasonic
+                  <ul>
+                    <li> <a href="/equipment/ip/panasonic-tgp500">TGP500</a></li>
+                    <li> <a href="/equipment/ip/panasonic-tde200">SIP-транк в TDE-200</a></li>
+                  </ul>
+                </li>
+                <li>AddPac
+                  <ul>
+                    <li> <a href="/equipment/ip/addpac-adip90">AP-IP90</a></li>
+                  </ul>
+                </li>
+                <li>D-link
+                  <ul>
+                    <li> <a href="/equipment/ip/dlink-dvg5112">DVG5112S</a></li>
+                    <li> <a href="/equipment/ip/dlink-dph150">DPH150SE</a></li>
+                    <li> <a href="/equipment/ip/dlink-dvg5004">DVG5004S</a></li>
+                  </ul>
+                </li>
+                <li>SNR
+                  <ul>
+                    <li> <a href="/equipment/ip/snr-vp7030">VP7030</a></li>
+                  </ul>
+                </li>
+                <li>Yealink
+                  <ul>
+                    <li> <a href="/equipment/ip/yealink-t28p">T28P</a></li>
+                  </ul>
+                </li>
+                <li>Grandstream
+                  <ul>
+                    <li>GXP1620/1610</li>
+                    <li>GXP1400</li>
+                    <li>DP715</li>
+                  </ul>
+                </li>
+                <li>Cisco
+                  <ul>
+                    <li>SPA122</li>
+                    <li>SPA504G</li>
+                  </ul>
+                </li>
+                <li>IP-PBX Asterisk
+                  <ul>
+                    <li>Настройка IP-PBX Asterisk</li>
+                  </ul>
+                </li>
+                <li>Yota
+                  <ul>
+                    <li>SIP-подключение Gemtek R2</li>
+                  </ul>
+                </li>
+                <li>1С-Битрикс24
+                  <ul>
+                    <li>Подключение 1С-Битрикс24</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-9"><h2 id="-sip-d-link-dvg5004s">Настройка SIP шлюза D-link DVG5004S</h2>
+<p>Настройку данного шлюза осуществляем через веб-интерфейс. Для настройки необходимо подключиться к одному из LAN­-портов шлюза и выставить IP-адрес вида 192.168.8.XXX, где XXX – число от 1 до 253, либо выставить автоматическое получение IP-адреса.</p>
+<p>Затем необходимо через браузер зайти на веб-интерфейс шлюза по адресу: <a href="http://192.168.8.254">http://192.168.8.254</a> . Увидите следующую форму авторизации:</p>
+<p><img src="/equipment/ip/dlink-dvg5004/1.png" alt=""></p>
+<p>Логин и пароль по умолчанию – пустые поля.</p>
+<p>После успешной авторизации увидим следующее окно:</p>
+<p><img src="/equipment/ip/dlink-dvg5004/2.png" alt=""></p>
+<p>Для настройки SIP заходим во вкладку General Settings -&gt; SIP:</p>
+<p><img src="/equipment/ip/dlink-dvg5004/3.png" alt=""></p>
+<p>Отмечаем пункт «Enable Support of SIP Proxy Server/Soft Switch»</p>
+<p>Далее в разделе Line заполняем следующие поля:</p>
+<p>Number – имя учетной записи</p>
+<p>User ID/Account – имя учетной записи</p>
+<p>Password and Confirm Password – пароль учетной записи</p>
+<p>Так же необходимо поставить галочки в пунктах Register и Invite with ID/Account.</p>
+<p>В данном пункте необходимо обратить внимание, что поля Number в настройках линии НЕ ДОЛЖНЫ оставаться пустыми ( иначе D-link выдаст ошибку).</p>
+<p>То есть если Вам необходимо настроить 2 учетных записи, то остальные линии оставляем без изменений ( по умолчанию в поле Number выставлено значение 70X, где X- номер линии от 1 до 4).</p>
+<p>Далее в разделе SIP Proxy Server необходимо выставить следующие настройки:</p>
+<p><img src="/equipment/ip/dlink-dvg5004/4.png" alt=""></p>
+<p>Proxy Server IP/Domain – доменное имя или IP-адрес SIP-сервера;</p>
+<p>Proxy Server Port – обычно 5060;</p>
+<p>Proxy Server Realm –  доменное имя или IP-адрес SIP-сервера;</p>
+<p>TTL(Registration interval) – можно оставить стандартное значение 600 сек, это период перерегистрации оборудования.</p>
+<p>Так же необходимо проверить настройки кодеков, установленных на оборудовании в разделе Advanced Settings -&gt; Codec Settings:</p>
+<p><img src="/equipment/ip/dlink-dvg5004/5.png" alt=""></p>
+<p>На этом основная настройка SIP закончена, можно подключать телефоны и пользоваться телефонной связью.</p>
+
+        </div>
+      </div>
+    </div>
+    <hr><br><br><br>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-2029674-20', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
