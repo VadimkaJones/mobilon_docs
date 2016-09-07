@@ -1,7 +1,7 @@
 --- 
 template: webcall.jade
 title: Настройка
-order: 20
+order: 30
 ---
 
 ## Настройка
