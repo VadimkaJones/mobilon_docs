@@ -85,8 +85,6 @@
 <h3 id="api">API</h3>
 <p>API позволяет взаимодействовать сторонним системам с сервисами Виртуальной АТС. </p>
 <p>Для совершения действий вам необходимо узнать соответствующий ключ абонента (пользователя портала Виртуальной АТС). </p>
-<script type="text/javascript" src="http://webform.mobilon.ru/include/widget.js/57ad977146cc8f010033da47"></script>
-
 <h4 id="-">Инициирование вызова</h4>
 <p>Для совершения вызова с абонента Виртуальной АТС на определенный номер можно сделать http запрос. После запроса придет вызов на абонента, а после ответа абонента вызов пойдет на вызываемый номер.</p>
 <pre><code>http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&amp;outboundNumber={number}
@@ -96,7 +94,9 @@
 <pre><code>{ &quot;result&quot;: &quot;SUCCESS&quot;, &quot;message&quot;: &quot;Звонок инициирован&quot; }
 </code></pre><p>Неуспешное выполнение</p>
 <pre><code>{ &quot;result&quot;: &quot;FAIL&quot;, &quot;message&quot;: &quot;Неверный ключ&quot; }
-</code></pre><h3 id="webhooks">Webhooks</h3>
+</code></pre><h4 id="-">Полигон</h4>
+<p><a href="https://antirek.github.io/mobilon-demo">попробовать онлайн-запрос</a></p>
+<h3 id="webhooks">Webhooks</h3>
 <p>Веб-хуки - адреса в сети интернет, которые могут быть запрошены во время обработки звонков Виртуальной АТС.</p>
 <h4 id="-">Получение звонков абонентами</h4>
 <p>В настройках Виртуальной АТС укажите веб-адрес системы, куда необходимо передавать информацию о звонке.</p>
