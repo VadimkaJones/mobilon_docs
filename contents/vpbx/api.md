@@ -39,6 +39,27 @@ http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&outboundNumber
 
 [попробовать онлайн-запрос](https://antirek.github.io/mobilon-demo)
 
+#### Пример для 1С 8.х
+
+Можно повешать такую функцию на кнопку
+
+`````
+// key - ключ сотрудника, полученный в ВАТС
+// number - номер, на который нужно позвонить
+&НаСервере
+Процедура Позвонить(key, number)
+    НТТР = Новый HTTPСоединение("connect.mobilon.ru");
+    Запрос = Новый HTTPЗапрос("/api/call/CallToSubscriber/?key="+СокрЛП(key)+"&outboundNumber="+СокрЛП(number));
+    Ответ = НТТР.Получить(Запрос);
+
+    Если Ответ.КодСостояния <> 200 Тогда
+        Сообщить("Не удалось совершить исходящий вызов");
+    КонецЕсли;
+КонецПроцедуры
+
+`````
+
+
 
 
 ### Webhooks 
