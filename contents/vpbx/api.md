@@ -41,7 +41,7 @@ http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&outboundNumber
 
 #### Пример для 1С 8.х
 
-Можно повешать такую функцию на кнопку
+Повешайте функцию на кнопку
 
 `````
 // key - ключ сотрудника, полученный в ВАТС
@@ -60,8 +60,6 @@ http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&outboundNumber
 `````
 
 
-
-
 ### Webhooks 
 
 Веб-хуки - адреса в сети интернет, которые могут быть запрошены во время обработки звонков Виртуальной АТС.
@@ -78,3 +76,9 @@ http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&outboundNumber
 Результат запроса
 
 ![](images/webhooks_2.png)
+
+
+
+#### Использование веб-хуков через 1С-SOAP (beta test)
+
+[Инструкция](attachments/MobilonVATS-1C-integration.pdf)
