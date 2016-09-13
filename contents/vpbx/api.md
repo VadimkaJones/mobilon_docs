@@ -39,7 +39,7 @@ http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&outboundNumber
 #### curl
 
 `````
-curl -X GET http://connect.mobilon.ru/api/call/CallToSubscriber\?key\={key}\&outboundNumber\={number}
+curl -X GET "http://connect.mobilon.ru/api/call/CallToSubscriber?key={key}&outboundNumber={number}"
 
 `````
 
