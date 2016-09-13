@@ -33,6 +33,14 @@ http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&outboundNumber
 Неуспешное выполнение
 `````
 { "result": "FAIL", "message": "Неверный ключ" }
+
+`````
+
+#### curl
+
+`````
+curl -X GET http://connect.mobilon.ru/api/call/CallToSubscriber\?key\={key}\&outboundNumber\={number}
+
 `````
 
 #### Полигон
