@@ -24,3 +24,10 @@ order: 20
 #### Темное
 
 ![Image](images/mobilon_dark.png)
+
+
+### Мобильное оформление
+
+![Image](images/mobile_1.jpg)
+
+![Image](images/mobile_2.jpg)
