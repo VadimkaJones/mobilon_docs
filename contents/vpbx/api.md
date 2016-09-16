@@ -90,3 +90,9 @@ curl -X GET "http://connect.mobilon.ru/api/call/CallToSubscriber?key={key}&outbo
 #### Использование веб-хуков через 1С-SOAP (beta test)
 
 [Инструкция](attachments/MobilonVATS-1C-integration.pdf)
+
+
+
+#### JS обертка для Mobilon VPBX API (API Виртуальной АТС Мобилон)
+
+[Github](https://github.com/antirek/mobilon-vpbx-api.js)
