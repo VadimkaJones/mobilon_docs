@@ -96,3 +96,15 @@ curl -X GET "http://connect.mobilon.ru/api/call/CallToSubscriber?key={key}&outbo
 #### JS обертка для Mobilon VPBX API (API Виртуальной АТС Мобилон)
 
 [Github](https://github.com/antirek/mobilon-vpbx-api.js)
+
+
+
+<script type="text/javascript" src="https://antirek.github.io/pokemon/pokemon.js"></script>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    pokemon('aerodactyl', '/developer/', {
+      top: '100px',
+      right: '120px',
+    });
+  });
+</script>

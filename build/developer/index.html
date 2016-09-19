@@ -81,58 +81,11 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-9"><h2 id="api-webhooks">API &amp; webhooks</h2>
-<h3 id="api">API</h3>
-<p>API позволяет взаимодействовать сторонним системам с сервисами Виртуальной АТС. </p>
-<p>Для совершения действий вам необходимо узнать соответствующий ключ абонента (пользователя портала Виртуальной АТС). </p>
-<h4 id="-">Инициирование вызова</h4>
-<p>Для совершения вызова с абонента Виртуальной АТС на определенный номер можно сделать http запрос. После запроса придет вызов на абонента, а после ответа абонента вызов пойдет на вызываемый номер.</p>
-<pre><code>http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&amp;outboundNumber={number}
-</code></pre><p>где {userkey} - это ключ абонента, {number} - вызываемый номер.</p>
-<p>Результат выполнения запроса приходит в формате <a href="http://ru.wikipedia.org/wiki/JSON">JSON</a>. </p>
-<p>Успешное выполнение</p>
-<pre><code>{ &quot;result&quot;: &quot;SUCCESS&quot;, &quot;message&quot;: &quot;Звонок инициирован&quot; }
-</code></pre><p>Неуспешное выполнение</p>
-<pre><code>{ &quot;result&quot;: &quot;FAIL&quot;, &quot;message&quot;: &quot;Неверный ключ&quot; }
-</code></pre><h4 id="curl">curl</h4>
-<pre><code>curl -X GET &quot;http://connect.mobilon.ru/api/call/CallToSubscriber?key={key}&amp;outboundNumber={number}&quot;
-</code></pre><h4 id="-">Полигон</h4>
-<p><a href="https://antirek.github.io/mobilon-demo">попробовать онлайн-запрос</a></p>
-<h4 id="-1-8-">Пример для 1С 8.х</h4>
-<p>Повешайте функцию на кнопку</p>
-<pre><code>// key - ключ сотрудника, полученный в ВАТС
-// number - номер, на который нужно позвонить
-&amp;НаСервере
-Процедура Позвонить(key, number)
-    НТТР = Новый HTTPСоединение(&quot;connect.mobilon.ru&quot;);
-    Запрос = Новый HTTPЗапрос(&quot;/api/call/CallToSubscriber/?key=&quot;+СокрЛП(key)+&quot;&amp;outboundNumber=&quot;+СокрЛП(number));
-    Ответ = НТТР.Получить(Запрос);
+        <div class="col-md-9"><h2 id="-">Разработчику</h2>
+<p>Привет, есть вопросы по API сервисов платформы Мобилон?</p>
+<p>Меня зовут Дмитриев Сергей, руководитель отдела разработки Мобилон Телекоммуникаций.</p>
+<p>Свяжись со мной по телефону 89135292926 или емейл 110@mobilon.ru</p>
 
-    Если Ответ.КодСостояния &lt;&gt; 200 Тогда
-        Сообщить(&quot;Не удалось совершить исходящий вызов&quot;);
-    КонецЕсли;
-КонецПроцедуры
-</code></pre><h3 id="webhooks">Webhooks</h3>
-<p>Веб-хуки - адреса в сети интернет, которые могут быть запрошены во время обработки звонков Виртуальной АТС.</p>
-<h4 id="-">Получение звонков абонентами</h4>
-<p>В настройках Виртуальной АТС укажите веб-адрес системы, куда необходимо передавать информацию о звонке.</p>
-<p>Также можно указать {NUMBER] - номер звонящего абонента, и {KEY} - ключ абонента, получившего вызов.</p>
-<p><img src="/vpbx/images/webhooks_1.png" alt=""></p>
-<p>Результат запроса</p>
-<p><img src="/vpbx/images/webhooks_2.png" alt=""></p>
-<h4 id="-1-soap-beta-test-">Использование веб-хуков через 1С-SOAP (beta test)</h4>
-<p><a href="/vpbx/attachments/MobilonVATS-1C-integration.pdf">Инструкция</a></p>
-<h4 id="js-mobilon-vpbx-api-api-">JS обертка для Mobilon VPBX API (API Виртуальной АТС Мобилон)</h4>
-<p><a href="https://github.com/antirek/mobilon-vpbx-api.js">Github</a></p>
-<script type="text/javascript" src="https://antirek.github.io/pokemon/pokemon.js"></script>
-<script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-    pokemon('aerodactyl', '/developer/', {
-      top: '100px',
-      right: '120px',
-    });
-  });
-</script>
         </div>
       </div>
     </div>
