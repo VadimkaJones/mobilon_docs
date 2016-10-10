@@ -27,19 +27,27 @@ http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&outboundNumber
 
 Успешное выполнение
 `````
-{ "result": "SUCCESS", "message": "Звонок инициирован" }
+{
+  "result":"SUCCESS",
+  "description":"Call had been initialised",
+  "code":0,
+  "callid":"1476087194.216329"
+}
 `````
 
 Неуспешное выполнение
 `````
-{ "result": "FAIL", "message": "Неверный ключ" }
+{
+  "result": "FAIL", 
+  "message": "Неверный ключ"
+}
 
 `````
 
 #### curl
 
 `````
-curl -X GET "http://connect.mobilon.ru/api/call/CallToSubscriber?key={key}&outboundNumber={number}"
+curl -X GET "http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&outboundNumber={number}"
 
 `````
 
@@ -66,6 +74,34 @@ curl -X GET "http://connect.mobilon.ru/api/call/CallToSubscriber?key={key}&outbo
 КонецПроцедуры
 
 `````
+
+
+#### получение информации о звонке
+
+В результате выполнения инициации звонка возвращается callid, по которому позже можно получить информацию о звонке
+
+`````
+http://connect.mobilon.ru/api/call/info?token={token}&callid={callid}
+
+`````
+где {token} - это токен аккаунта, {callid} - id звонка.
+
+Возвращает результат
+
+`````
+<?xml version="1.0" encoding="UTF-8"?>
+<call>
+  <status>ANSWERED</status>
+  <record_url>/api/call/record?token={token}&callid={callid}</record_url>
+  <duration>203</duration>
+</call>
+
+`````
+
+xml содержит ссылку на запись звонка
+
+
+
 
 
 ### Webhooks 

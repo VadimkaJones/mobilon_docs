@@ -61,7 +61,6 @@
                     </ul>
                   </li>
                   <li> <a href="/vpbx/conferences.html">Конференции</a></li>
-                  <li> <a href="/vpbx/api.html">API & webhooks</a></li>
                 </ul>
               </li>
               <li>Отчеты
@@ -76,6 +75,12 @@
                   <li> <a href="/vpbx/callerid.html">Маршрутизация по АОН</a></li>
                   <li> <a href="/vpbx/rating.html">Оценка операторов</a></li>
                   <li> <a href="/vpbx/callback.html">Обратный звонок</a></li>
+                  <li> <a href="/vpbx/amocrm">Интеграция с AmoCRM</a></li>
+                </ul>
+              </li>
+              <li>API
+                <ul> 
+                  <li> <a href="/vpbx/api.html">API & webhooks</a></li>
                 </ul>
               </li>
             </ul>
@@ -91,11 +96,19 @@
 </code></pre><p>где {userkey} - это ключ абонента, {number} - вызываемый номер.</p>
 <p>Результат выполнения запроса приходит в формате <a href="http://ru.wikipedia.org/wiki/JSON">JSON</a>. </p>
 <p>Успешное выполнение</p>
-<pre><code>{ &quot;result&quot;: &quot;SUCCESS&quot;, &quot;message&quot;: &quot;Звонок инициирован&quot; }
+<pre><code>{
+  &quot;result&quot;:&quot;SUCCESS&quot;,
+  &quot;description&quot;:&quot;Call had been initialised&quot;,
+  &quot;code&quot;:0,
+  &quot;callid&quot;:&quot;1476087194.216329&quot;
+}
 </code></pre><p>Неуспешное выполнение</p>
-<pre><code>{ &quot;result&quot;: &quot;FAIL&quot;, &quot;message&quot;: &quot;Неверный ключ&quot; }
+<pre><code>{
+  &quot;result&quot;: &quot;FAIL&quot;, 
+  &quot;message&quot;: &quot;Неверный ключ&quot;
+}
 </code></pre><h4 id="curl">curl</h4>
-<pre><code>curl -X GET &quot;http://connect.mobilon.ru/api/call/CallToSubscriber?key={key}&amp;outboundNumber={number}&quot;
+<pre><code>curl -X GET &quot;http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&amp;outboundNumber={number}&quot;
 </code></pre><h4 id="-">Полигон</h4>
 <p><a href="https://antirek.github.io/mobilon-demo">попробовать онлайн-запрос</a></p>
 <h4 id="-1-8-">Пример для 1С 8.х</h4>
@@ -112,7 +125,19 @@
         Сообщить(&quot;Не удалось совершить исходящий вызов&quot;);
     КонецЕсли;
 КонецПроцедуры
-</code></pre><h3 id="webhooks">Webhooks</h3>
+</code></pre><h4 id="-">получение информации о звонке</h4>
+<p>В результате выполнения инициации звонка возвращается callid, по которому позже можно получить информацию о звонке</p>
+<pre><code>http://connect.mobilon.ru/api/call/info?token={token}&amp;callid={callid}
+</code></pre><p>где {token} - это токен аккаунта, {callid} - id звонка.</p>
+<p>Возвращает результат</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;call&gt;
+  &lt;status&gt;ANSWERED&lt;/status&gt;
+  &lt;record_url&gt;/api/call/record?token={token}&amp;callid={callid}&lt;/record_url&gt;
+  &lt;duration&gt;203&lt;/duration&gt;
+&lt;/call&gt;
+</code></pre><p>xml содержит ссылку на запись звонка</p>
+<h3 id="webhooks">Webhooks</h3>
 <p>Веб-хуки - адреса в сети интернет, которые могут быть запрошены во время обработки звонков Виртуальной АТС.</p>
 <h4 id="-">Получение звонков абонентами</h4>
 <p>В настройках Виртуальной АТС укажите веб-адрес системы, куда необходимо передавать информацию о звонке.</p>
