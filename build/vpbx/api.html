@@ -125,7 +125,7 @@
         Сообщить(&quot;Не удалось совершить исходящий вызов&quot;);
     КонецЕсли;
 КонецПроцедуры
-</code></pre><h4 id="-">получение информации о звонке</h4>
+</code></pre><h4 id="-callid">получение информации о звонке по callid</h4>
 <p>В результате выполнения инициации звонка возвращается callid, по которому позже можно получить информацию о звонке</p>
 <pre><code>http://connect.mobilon.ru/api/call/info?token={token}&amp;callid={callid}
 </code></pre><p>где {token} - это токен аккаунта, {callid} - id звонка.</p>
@@ -135,9 +135,35 @@
   &lt;status&gt;ANSWERED&lt;/status&gt;
   &lt;record_url&gt;/api/call/record?token={token}&amp;callid={callid}&lt;/record_url&gt;
   &lt;duration&gt;203&lt;/duration&gt;
+  &lt;from&gt;81234567890&lt;/from&gt;
+  &lt;to&gt;123123&lt;/to&gt;
+  &lt;time&gt;2015-04-28 12:00:00&lt;/time&gt;
 &lt;/call&gt;
 </code></pre><p>xml содержит ссылку на запись звонка</p>
-<h3 id="webhooks">Webhooks</h3>
+<h4 id="-">получение информации о звонках за период</h4>
+<p>Есть возможность получить информацию о звонках за определенный день</p>
+<pre><code>http://connect.mobilon.ru/api/call/info?token={token}&amp;date={date}
+</code></pre><p>где {token} - это токен аккаунта, {date} - дата (в формате ГГГГ-ММ-ДД).</p>
+<p>Возвращает результат</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;calls&gt;
+  &lt;call&gt;
+    &lt;status&gt;ANSWERED&lt;/status&gt;
+    &lt;duration&gt;113&lt;/duration&gt;
+    &lt;from&gt;81234567890&lt;/from&gt;
+    &lt;to&gt;987315&lt;/to&gt;
+    &lt;time&gt;2015-04-28 13:12:00&lt;/time&gt;
+  &lt;/call&gt;
+  &lt;call&gt;
+    &lt;status&gt;ANSWERED&lt;/status&gt;
+    &lt;record_url&gt;/api/call/record?token={token}&amp;callid={callid}&lt;/record_url&gt;
+    &lt;duration&gt;203&lt;/duration&gt;
+    &lt;from&gt;81234567890&lt;/from&gt;
+    &lt;to&gt;123123&lt;/to&gt;
+    &lt;time&gt;2015-04-28 12:00:00&lt;/time&gt;
+  &lt;/call&gt;
+&lt;/calls&gt;
+</code></pre><h3 id="webhooks">Webhooks</h3>
 <p>Веб-хуки - адреса в сети интернет, которые могут быть запрошены во время обработки звонков Виртуальной АТС.</p>
 <h4 id="-">Получение звонков абонентами</h4>
 <p>В настройках Виртуальной АТС укажите веб-адрес системы, куда необходимо передавать информацию о звонке.</p>

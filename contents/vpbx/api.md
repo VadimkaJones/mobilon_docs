@@ -76,7 +76,7 @@ curl -X GET "http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&o
 `````
 
 
-#### получение информации о звонке
+#### получение информации о звонке по callid
 
 В результате выполнения инициации звонка возвращается callid, по которому позже можно получить информацию о звонке
 
@@ -94,6 +94,9 @@ http://connect.mobilon.ru/api/call/info?token={token}&callid={callid}
   <status>ANSWERED</status>
   <record_url>/api/call/record?token={token}&callid={callid}</record_url>
   <duration>203</duration>
+  <from>81234567890</from>
+  <to>123123</to>
+  <time>2015-04-28 12:00:00</time>
 </call>
 
 `````
@@ -101,6 +104,40 @@ http://connect.mobilon.ru/api/call/info?token={token}&callid={callid}
 xml содержит ссылку на запись звонка
 
 
+
+#### получение информации о звонках за период
+
+Есть возможность получить информацию о звонках за определенный день
+
+`````
+http://connect.mobilon.ru/api/call/info?token={token}&date={date}
+
+`````
+где {token} - это токен аккаунта, {date} - дата (в формате ГГГГ-ММ-ДД).
+
+Возвращает результат
+
+`````
+<?xml version="1.0" encoding="UTF-8"?>
+<calls>
+  <call>
+    <status>ANSWERED</status>
+    <duration>113</duration>
+    <from>81234567890</from>
+    <to>987315</to>
+    <time>2015-04-28 13:12:00</time>
+  </call>
+  <call>
+    <status>ANSWERED</status>
+    <record_url>/api/call/record?token={token}&callid={callid}</record_url>
+    <duration>203</duration>
+    <from>81234567890</from>
+    <to>123123</to>
+    <time>2015-04-28 12:00:00</time>
+  </call>
+</calls>
+
+`````
 
 
 
