@@ -93,7 +93,7 @@
 <p>Для совершения действий вам необходимо узнать соответствующий ключ абонента (пользователя портала Виртуальной АТС). </p>
 <h4 id="-">Инициирование вызова</h4>
 <p>Для совершения вызова с абонента Виртуальной АТС на определенный номер можно сделать http запрос. После запроса придет вызов на абонента, а после ответа абонента вызов пойдет на вызываемый номер.</p>
-<pre><code>http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&amp;outboundNumber={number}
+<pre><code>https://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&amp;outboundNumber={number}
 </code></pre><p>где {userkey} - это ключ абонента, {number} - вызываемый номер.</p>
 <p>Результат выполнения запроса приходит в формате <a href="http://ru.wikipedia.org/wiki/JSON">JSON</a>. </p>
 <p>Успешное выполнение</p>
@@ -109,7 +109,7 @@
   &quot;message&quot;: &quot;Неверный ключ&quot;
 }
 </code></pre><h4 id="curl">curl</h4>
-<pre><code>curl -X GET &quot;http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&amp;outboundNumber={number}&quot;
+<pre><code>curl -X GET &quot;https://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&amp;outboundNumber={number}&quot;
 </code></pre><h4 id="-">Полигон</h4>
 <p><a href="https://antirek.github.io/mobilon-demo">попробовать онлайн-запрос</a></p>
 <h4 id="-1-8-">Пример для 1С 8.х</h4>
@@ -128,7 +128,7 @@
 КонецПроцедуры
 </code></pre><h4 id="-callid">получение информации о звонке по callid</h4>
 <p>В результате выполнения инициации звонка возвращается callid, по которому позже можно получить информацию о звонке</p>
-<pre><code>http://connect.mobilon.ru/api/call/info?token={token}&amp;callid={callid}
+<pre><code>https://connect.mobilon.ru/api/call/info?token={token}&amp;callid={callid}
 </code></pre><p>где {token} - это токен аккаунта, {callid} - id звонка.</p>
 <p>Возвращает результат</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
@@ -143,7 +143,7 @@
 </code></pre><p>xml содержит ссылку на запись звонка</p>
 <h4 id="-">получение информации о звонках за период</h4>
 <p>Есть возможность получить информацию о звонках за определенный день</p>
-<pre><code>http://connect.mobilon.ru/api/call/info?token={token}&amp;date={date}
+<pre><code>https://connect.mobilon.ru/api/call/info?token={token}&amp;date={date}
 </code></pre><p>где {token} - это токен аккаунта, {date} - дата (в формате ГГГГ-ММ-ДД).</p>
 <p>Возвращает результат</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
@@ -174,20 +174,6 @@
 <p><img src="/vpbx/images/webhooks_2.png" alt=""></p>
 <h4 id="js-mobilon-vpbx-api-api-">JS обертка для Mobilon VPBX API (API Виртуальной АТС Мобилон)</h4>
 <p><a href="https://github.com/antirek/mobilon-vpbx-api.js">Github</a></p>
-<script type="text/javascript" src="https://antirek.github.io/pokemon/pokemon.js"></script>
-<script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-    pokemon('aerodactyl', '/developer/', {
-      top: '100px',
-      right: '120px',
-    });
-  });
-</script>
-
-
-
-
-
 <h1 id="-1-">Интеграция с 1С</h1>
 <p>1С может быть интегрирована с Виртуальной АТС Мобилон посредством веб-сервисов 1С. <a href="http://v8.1c.ru/overview/Term_000000273.htm">Веб-сервисы 1С</a> реализуются на основе WSDL/SOAP интерфейса. 1С публикует список доступных методов и параметров, а внешняя система может их использовать. </p>
 <p>Для интеграции необходимо реализовать два метода: один для получения информации о звонящем (по номеру звонящего) и второй для отображения карточки клиента (по номеру звонящего).</p>
@@ -241,7 +227,15 @@
 &lt;/soap:Envelope&gt;
 </code></pre><p><a href="/vpbx/attachments/MobilonVATS-1C-integration.pdf">Инструкция</a> - здесь рассказано как реализовать появление карточки со стороны 1С.</p>
 <p><em>*</em> Внимание. Указанные  выше примеры могут отличаться от используемых в реальных системах в зависимости от версий ПО и приведены с целью ознакомления. Пожалуйста, в случае вопросов свяжитесь с технической поддержкой Виртуальной АТС Мобилон.</p>
-
+<script type="text/javascript" src="https://antirek.github.io/pokemon/pokemon.js"></script>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    pokemon('aerodactyl', '/developer/', {
+      top: '100px',
+      right: '120px',
+    });
+  });
+</script>
         </div>
       </div>
     </div>

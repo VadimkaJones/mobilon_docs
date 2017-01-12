@@ -18,7 +18,7 @@ API позволяет взаимодействовать сторонним с�
 
 
 `````
-http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&outboundNumber={number}
+https://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&outboundNumber={number}
 
 `````
 где {userkey} - это ключ абонента, {number} - вызываемый номер.
@@ -47,7 +47,7 @@ http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&outboundNumber
 #### curl
 
 `````
-curl -X GET "http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&outboundNumber={number}"
+curl -X GET "https://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&outboundNumber={number}"
 
 `````
 
@@ -81,7 +81,7 @@ curl -X GET "http://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&o
 В результате выполнения инициации звонка возвращается callid, по которому позже можно получить информацию о звонке
 
 `````
-http://connect.mobilon.ru/api/call/info?token={token}&callid={callid}
+https://connect.mobilon.ru/api/call/info?token={token}&callid={callid}
 
 `````
 где {token} - это токен аккаунта, {callid} - id звонка.
@@ -110,7 +110,7 @@ xml содержит ссылку на запись звонка
 Есть возможность получить информацию о звонках за определенный день
 
 `````
-http://connect.mobilon.ru/api/call/info?token={token}&date={date}
+https://connect.mobilon.ru/api/call/info?token={token}&date={date}
 
 `````
 где {token} - это токен аккаунта, {date} - дата (в формате ГГГГ-ММ-ДД).
@@ -160,24 +160,9 @@ http://connect.mobilon.ru/api/call/info?token={token}&date={date}
 
 
 
-
-
-
 #### JS обертка для Mobilon VPBX API (API Виртуальной АТС Мобилон)
 
 [Github](https://github.com/antirek/mobilon-vpbx-api.js)
-
-
-
-<script type="text/javascript" src="https://antirek.github.io/pokemon/pokemon.js"></script>
-<script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-    pokemon('aerodactyl', '/developer/', {
-      top: '100px',
-      right: '120px',
-    });
-  });
-</script>
 
 
 
@@ -268,3 +253,18 @@ curl -X POST -H "Authorization: Basic U09BUDoxMjM=" -H "Content-Type: text/xml" 
 
 
 *** Внимание. Указанные  выше примеры могут отличаться от используемых в реальных системах в зависимости от версий ПО и приведены с целью ознакомления. Пожалуйста, в случае вопросов свяжитесь с технической поддержкой Виртуальной АТС Мобилон.
+
+
+
+
+
+
+<script type="text/javascript" src="https://antirek.github.io/pokemon/pokemon.js"></script>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    pokemon('aerodactyl', '/developer/', {
+      top: '100px',
+      right: '120px',
+    });
+  });
+</script>
