@@ -118,7 +118,7 @@ xml содержит ссылку на запись звонка
 Есть возможность получить информацию о звонках за определенный день
 
 `````
-https://connect.mobilon.ru/api/call/info?token={token}&date={date}
+https://connect.mobilon.ru/api/call/journal?token={token}&date={date}
 
 `````
 где {token} - это токен аккаунта, {date} - дата (в формате ГГГГ-ММ-ДД).
