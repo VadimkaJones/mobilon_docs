@@ -154,10 +154,7 @@
 <li>Для того что бы отключить функцию Call Waiting (прием второго вызова во время разговора) необходимо сделать следующее:</li>
 </ol>
 <p>8.1 Если телефон имеет доступ в сеть Интернет задача облегчается и можно воспользоваться нашим http сервером, если доступа нет, переходим к пункту 8.2.</p>
-<p>В данном случае доступ к сети Интернет есть и для настройки остается только перейти во вкладку «Техническое обслуживание» — «Подготовка к технической поддержке» и в строчке «URL стандартного файла» указать путь до файла конфигурации:</p>
-<p>для TGP500 — <a href="http://help.mobilon.ru/old/wp-content/uploads/2016/04/tgppanas.txt">http://help.mobilon.ru/old/wp-content/uploads/2016/04/tgppanas.txt</a></p>
-<p>для TGP500+RTCP — <a href="http://help.mobilon.ru/old/wp-content/uploads/2015/01/tgppanasrtcp.txt">http://help.mobilon.ru/old/wp-content/uploads/2015/01/tgppanasrtcp.txt</a></p>
-<p>для TGP600 — <a href="http://help.mobilon.ru/old/wp-content/uploads/2015/01/tgppanas600.txt">http://help.mobilon.ru/old/wp-content/uploads/2015/01/tgppanas600.txt</a></p>
+<p>В данном случае доступ к сети Интернет есть и для настройки остается только перейти во вкладку «Техническое обслуживание» — «Подготовка к технической поддержке» и в строчке «URL стандартного файла» указать путь до соответствующего файла конфигурации:</p>
 <p>Нажимаем кнопку сохранить (Рис. 5). После этого над заголовком «Подготовка к технической поддержке» должна появиться красная надпись – «Завершено».</p>
 <p>8.2 Если доступа к сети Интернет нет необходимо установить и запустить TFTP сервер, пример описан в пункте в пункте 10. На сервере разместим конфигурационный файл, доступный по ссылке ниже:</p>
 <p><a href="/equipment/ip/panasonic-tgp500/tgppanas.txt">Сохранить файл для TGP500</a></p>
@@ -165,6 +162,8 @@
 <p><a href="/equipment/ip/panasonic-tgp500/tgppanas600.txt">Сохранить файл для TGP600</a></p>
 <p><a href="/equipment/ip/panasonic-tgp500/panas_2ports.txt">panas_2ports</a></p>
 <p><a href="/equipment/ip/panasonic-tgp500/tgppanas2.txt">Сохранить файл для TGP500 v2</a></p>
+<p><a href="/equipment/ip/panasonic-tgp500/configtgpregexp15.sys">configtgpregexp15</a></p>
+<p><a href="/equipment/ip/panasonic-tgp500/configtgpsubs.sys">configtgpsubs</a></p>
 <p>После чего переходим во вкладку «Техническое обслуживание» — «Подготовка к технической поддержке» и в строчке «URL стандартного файла» прописывает путь до файла конфигурации, который находится на tftp-сервере. Путь к файлу будет примерно таким:
 tftp://ip-сервера/tgppanas.txt
 tftp://ip-сервера/tgppanas600.txt
