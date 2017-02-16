@@ -50,7 +50,7 @@
         <div class="col-md-9"><h2 id="gsm-api">GSM API</h2>
 <p>Используется basic http аутентификация.</p>
 <p>Логин, пароль, номер отправления предоставляются Мобилон.</p>
-<h3 id="-">Отправка СМС</h3>
+<h3 id="-">Отправка сообщений</h3>
 <p>POST-запрос с массивом объектов в JSON-формате.</p>
 <p>Параметры объекта:</p>
 <ul>
@@ -75,13 +75,63 @@ curl -X POST -H <span class="string">"Content-Type: application/json"</span> \
             "number": "8902980XXXX",
             "source": "8923456XXXX"
         }]'</span> \
-    <span class="string">"https://sms2g.services.mobilon.ru/messages/"</span>
+    <span class="string">"https://sms2g.services.mobilon.ru/send/"</span>
 </code></pre>
 <p>Ответ</p>
-<pre><code>
-</code></pre><h3 id="-">Получение статуса</h3>
+<pre><code>[
+  {
+    &quot;status&quot;: 0,
+    &quot;guid&quot;: &quot;7802d99b-3917-81ac-e0b7-52d5d44e6cd3&quot;,
+    &quot;text&quot;: &quot;привет, мир!&quot;,
+    &quot;number&quot;: &quot;8913529XXXX&quot;,
+    &quot;source&quot;: &quot;8923456XXXX&quot;,
+    &quot;id&quot;: &quot;58a532240312d84a8100de5c&quot;
+  },{
+    &quot;status&quot;: 0,
+    &quot;guid&quot;: &quot;70be9f43-1cbd-42fc-977f-416b1561e07e&quot;,
+    &quot;text&quot;: &quot;привет, мир 2!&quot;,
+    &quot;number&quot;: &quot;8902980XXXX&quot;,
+    &quot;source&quot;: &quot;8923456XXXX&quot;,
+    &quot;id&quot;: &quot;58a532240312d84a810324sd&quot;
+  }
+]
+</code></pre><h3 id="-">Статус сообщений</h3>
 <p>POST-запрос с массивом объектов в JSON-формате.</p>
-
+<p>Параметры объекта:</p>
+<ul>
+<li>id - id сообщения, возвращенный в запросе на отправку</li>
+</ul>
+<p>Запрос</p>
+<pre><code class="lang-sh">
+curl -X POST -H <span class="string">"Content-Type: application/json"</span> \
+    -H <span class="string">"Authorization: Basic dGVzdFVzZXI6dGVzdFBhc3N3b3Jk"</span> \
+    -H <span class="string">"Cache-Control: no-cache"</span> \
+    <span class="_">-d</span> <span class="string">'[{
+            "id": "58a532240312d84a8100de5c"
+        },{
+            "id": "58a532240312d84a810324sd"
+        }]'</span> \
+    <span class="string">"https://sms2g.services.mobilon.ru/status/"</span>
+</code></pre>
+<p>Ответ</p>
+<pre><code>[
+  {
+    &quot;status&quot;: 1,
+    &quot;guid&quot;: &quot;7802d99b-3917-81ac-e0b7-52d5d44e6cd3&quot;,
+    &quot;text&quot;: &quot;привет, мир!&quot;,
+    &quot;number&quot;: &quot;8913529XXXX&quot;,
+    &quot;source&quot;: &quot;8923456XXXX&quot;,
+    &quot;id&quot;: &quot;58a532240312d84a8100de5c&quot;
+  },{
+    &quot;status&quot;: 1,
+    &quot;guid&quot;: &quot;70be9f43-1cbd-42fc-977f-416b1561e07e&quot;,
+    &quot;text&quot;: &quot;привет, мир 2!&quot;,
+    &quot;number&quot;: &quot;8902980XXXX&quot;,
+    &quot;source&quot;: &quot;8923456XXXX&quot;,
+    &quot;id&quot;: &quot;58a532240312d84a810324sd&quot;
+  }
+]
+</code></pre>
         </div>
       </div>
     </div>
