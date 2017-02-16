@@ -47,31 +47,40 @@
             <li><a href="/sms/gsm.html">GSM</a></li>
           </div>
         </div>
-        <div class="col-md-9"><h2 id="-">Отправка одного СМС</h2>
-<ol>
-<li><p>Перейдите в пункт “Отправка СМС” </p>
-</li>
-<li><p>Введите номер и текст сообщения. Нажмите кнопку “Отправить”.</p>
-</li>
-</ol>
-<p>Все ок! СМС отправлена.</p>
-<p><img src="/sms/images/send_sms.png" alt=""></p>
-<h3 id="-">Проверка отправки</h3>
-<ol>
-<li><p>Перейдите на вкладку “Журнал”</p>
-</li>
-<li><p>Найдите в списке номер, на который вы отправили СМС. Проверьте статус отправки.</p>
-</li>
-</ol>
-<h3 id="-">Статусы СМС</h3>
-<ol>
-<li><p>“Не отправлено” - СМС не отправлено. Это может быть по нескольким причинам: технические неполадки, отсутствие средств на счету клиента.</p>
-</li>
-<li><p>“Отправлено” - СМС отправлено.</p>
-</li>
-<li><p>“Доставлено” - СМС отправлено и доставлено на устройство с номером отправки.</p>
-</li>
-</ol>
+        <div class="col-md-9"><h2 id="gsm-api">GSM API</h2>
+<p>Используется basic http аутентификация.</p>
+<p>Логин, пароль, номер отправления предоставляются Мобилон.</p>
+<h3 id="-">Отправка СМС</h3>
+<p>POST-запрос с массивом объектов в JSON-формате.</p>
+<p>Параметры объекта:</p>
+<ul>
+<li>guid - произвольный id</li>
+<li>text - текст сообщения</li>
+<li>number - номер назначения</li>
+<li>source - номер отправления</li>
+</ul>
+<p>Запрос</p>
+<pre><code class="lang-sh">
+curl -X POST -H <span class="string">"Content-Type: application/json"</span> \
+    -H <span class="string">"Authorization: Basic dGVzdFVzZXI6dGVzdFBhc3N3b3Jk"</span> \
+    -H <span class="string">"Cache-Control: no-cache"</span> \
+    <span class="_">-d</span> <span class="string">'[{
+            "guid": "7802d99b-3917-81ac-e0b7-52d5d44e6cd3",
+            "text": "привет, мир!",
+            "number": "8913529XXXX",
+            "source": "8923456XXXX"
+        },{
+            "guid": "70be9f43-1cbd-42fc-977f-416b1561e07e",
+            "text": "привет, мир 2!",
+            "number": "8902980XXXX",
+            "source": "8923456XXXX"
+        }]'</span> \
+    <span class="string">"https://sms2g.services.mobilon.ru/messages/"</span>
+</code></pre>
+<p>Ответ</p>
+<pre><code>
+</code></pre><h3 id="-">Получение статуса</h3>
+<p>POST-запрос с массивом объектов в JSON-формате.</p>
 
         </div>
       </div>
