@@ -51,16 +51,10 @@ curl -X POST -H "Content-Type: application/json" \
   {
     "status": 0,
     "guid": "7802d99b-3917-81ac-e0b7-52d5d44e6cd3",
-    "text": "привет, мир!",
-    "number": "8913529XXXX",
-    "source": "8923456XXXX",
     "id": "58a532240312d84a8100de5c"
   },{
     "status": 0,
     "guid": "70be9f43-1cbd-42fc-977f-416b1561e07e",
-    "text": "привет, мир 2!",
-    "number": "8902980XXXX",
-    "source": "8923456XXXX",
     "id": "58a532240312d84a810324sd"
   }
 ]
@@ -99,16 +93,12 @@ curl -X POST -H "Content-Type: application/json" \
   {
     "status": 1,
     "guid": "7802d99b-3917-81ac-e0b7-52d5d44e6cd3",
-    "text": "привет, мир!",
-    "number": "8913529XXXX",
-    "source": "8923456XXXX",
+    "dateTimeSent": "2017-02-22T16:57:24.705Z",
     "id": "58a532240312d84a8100de5c"
   },{
     "status": 1,
     "guid": "70be9f43-1cbd-42fc-977f-416b1561e07e",
-    "text": "привет, мир 2!",
-    "number": "8902980XXXX",
-    "source": "8923456XXXX",
+    "dateTimeSent": "2017-02-22T17:03:04.129Z",
     "id": "58a532240312d84a810324sd"
   }
 ]
