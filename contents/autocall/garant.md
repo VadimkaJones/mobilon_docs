@@ -45,7 +45,7 @@ curl -X POST -H "Content-Type: application/json" \
             "number": "8902980XXXX",
             "source": "8923456XXXX"
         }]' \
-    "https://autocall2g.services.mobilon.ru/append/"
+    "https://autocall2g.services.mobilon.ru/call/"
 
 `````
 
