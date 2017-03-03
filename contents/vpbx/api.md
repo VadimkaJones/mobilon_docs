@@ -39,10 +39,25 @@ https://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&outboundNumbe
 `````
 {
   "result": "FAIL", 
-  "message": "Неверный ключ"
+  "description": "Operator is not registered",
+  "code": "1"
 }
 
 `````
+
+Коды ошибок:
+
+- 1 => 'Operator is not registered'
+
+- 2 => 'Invalid API key'
+
+- 3 => 'The number can only consist of numbers and Latin characters'
+
+- 4 => 'Internal error'
+
+- 5 => 'User doesn\'t have subscriber or operator'
+
+
 
 #### curl
 

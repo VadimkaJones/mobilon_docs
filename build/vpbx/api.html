@@ -106,9 +106,23 @@
 </code></pre><p>Неуспешное выполнение</p>
 <pre><code>{
   &quot;result&quot;: &quot;FAIL&quot;, 
-  &quot;message&quot;: &quot;Неверный ключ&quot;
+  &quot;description&quot;: &quot;Operator is not registered&quot;,
+  &quot;code&quot;: &quot;1&quot;
 }
-</code></pre><h4 id="curl">curl</h4>
+</code></pre><p>Коды ошибок:</p>
+<ul>
+<li><p>1 =&gt; ‘Operator is not registered’</p>
+</li>
+<li><p>2 =&gt; ‘Invalid API key’</p>
+</li>
+<li><p>3 =&gt; ‘The number can only consist of numbers and Latin characters’</p>
+</li>
+<li><p>4 =&gt; ‘Internal error’</p>
+</li>
+<li><p>5 =&gt; ‘User doesn\’t have subscriber or operator’</p>
+</li>
+</ul>
+<h4 id="curl">curl</h4>
 <pre><code>curl -X GET &quot;https://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&amp;outboundNumber={number}&quot;
 </code></pre><h4 id="-">Полигон</h4>
 <p><a href="https://antirek.github.io/mobilon-demo">попробовать онлайн-запрос</a></p>
