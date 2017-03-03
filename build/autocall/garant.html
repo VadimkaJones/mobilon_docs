@@ -50,10 +50,10 @@
 <ul>
 <li>guid - произвольный id</li>
 <li>file - имя файла для проигрывания</li>
-<li>date - дата проигрывания</li>
-<li>time - время проигрывания</li>
-<li>number - вызываемый номер</li>
-<li>source - исходящий номер</li>
+<li>date - дата проигрывания, необязательное, формат ГГГГ-ММ-ДД</li>
+<li>time - время проигрывания, необязательное, формат ЧЧ:ММ</li>
+<li>number - вызываемый номер, формат 8NNNNNNNNNN</li>
+<li>source - исходящий номер, формат 8NNNNNNNNNN</li>
 </ul>
 <p>Запрос</p>
 <pre><code class="lang-sh">curl -X POST -H <span class="string">"Content-Type: application/json"</span> \
