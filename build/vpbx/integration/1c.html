@@ -155,7 +155,9 @@
 <li><p>в секции Key - ключ абонента</p>
 </li>
 </ul>
-<pre><code>curl -X POST -H &quot;Authorization: Basic U09BUDoxMjM=&quot; -H &quot;Content-Type: text/xml&quot; -H &quot;Cache-Control: no-cache&quot; -d &#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+<pre><code>curl -X POST -H &quot;Authorization: Basic U09BUDoxMjM=&quot; \
+    -H &quot;Content-Type: text/xml&quot; \
+    -d &#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
     &lt;soap:Body&gt;
         &lt;IncomingCall xmlns=&quot;http://VATS&quot;&gt;
