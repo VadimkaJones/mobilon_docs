@@ -94,36 +94,67 @@
         </div>
         <div class="col-md-9"><h1 id="-1-">Интеграция с 1С</h1>
 <p>1С может быть интегрирована с Виртуальной АТС Мобилон посредством веб-сервисов 1С. <a href="http://v8.1c.ru/overview/Term_000000273.htm">Веб-сервисы 1С</a> реализуются на основе WSDL/SOAP интерфейса. 1С публикует список доступных методов и параметров, а внешняя система может их использовать. </p>
-<p>Для интеграции необходимо реализовать два метода: один для получения информации о звонящем (по номеру звонящего) и второй для отображения карточки клиента (по номеру звонящего).</p>
+<p>Для интеграции необходимо реализовать два метода: </p>
+<ol>
+<li><p>для получения информации о звонящем (по номеру звонящего) </p>
+</li>
+<li><p>для отображения карточки клиента (по номеру звонящего и ключу абонента принимающего вызов)</p>
+</li>
+</ol>
 <h2 id="-">Получение информации о звонящем</h2>
-<p>Происходит получение имени абонента из 1С БД по номеру звонящего.</p>
-<p>Необходимо реализовать интерфейс веб-сервиса, который будет возвращать имя.</p>
-<p>Пример запроса от Виртуальной АТС Мобилон (в секции number передается номер звонящего):</p>
+<p>Из 1С БД по номеру звонящего происходит получение имени абонента, категории и номера ответственного менеджера. Этих данных достаточно, чтобы отображать на телефоне имя звонящего, осуществить маршрутизацию на ответственного менеджера.</p>
+<h3 id="-">Пример</h3>
+<p>Запрос (от Виртуальной АТС)</p>
+<ul>
+<li>в секции Number передается номер звонящего</li>
+</ul>
 <pre><code>curl -X POST -H &quot;Content-Type: text/xml&quot; \
-     -H &quot;Authorization: Basic U09BUDoxMjM=&quot; \
-     -H &quot;Cache-Control: no-cache&quot; \
+     -H &quot;Authorization: Basic U09BUDoxMjhe-Control: no-cache&quot; \
      -d &#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
     &lt;soap:Body&gt;
-        &lt;SayName xmlns=&quot;http://test&quot;&gt;
-            &lt;number&gt;89235292926&lt;/number&gt;
+        &lt;SayName xmlns=&quot;http://VATS&quot;&gt;
+            &lt;Number&gt;89235292926&lt;/Number&gt;
         &lt;/SayName&gt;
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
-&#39; &quot;http://&lt;ваш ip&gt;:8080/telephony/ws/VATS&quot;
-</code></pre><p>Пример ответа от веб-сервиса 1С:</p>
+&#39; &quot;http://ip:8080/telephony/ws/VATS&quot;
+</code></pre><p>Ответ (от веб-сервиса 1С)</p>
 <pre><code>&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
     &lt;soap:Body&gt;
-        &lt;m:SayNameResponse xmlns:m=&quot;http://test&quot;&gt;
-            &lt;m:return xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; 
-                    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;VIP:Ренессанс Капитал&lt;/m:return&gt;
+        &lt;m:SayNameResponse xmlns:m=&quot;http://VATS&quot;&gt;
+            &lt;m:return xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+                    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot;?&amp;gt;
+&amp;lt;data&amp;gt;
+    &amp;lt;title&amp;gt; Фэйковый чиж&amp;lt;/title&amp;gt;
+    &amp;lt;category&amp;gt;0&amp;lt;/category&amp;gt;
+    &amp;lt;manager&amp;gt;
+        &amp;lt;phone&amp;gt;244&amp;lt;/phone&amp;gt;
+    &amp;lt;/manager&amp;gt;
+&amp;lt;/data&amp;gt;
+&lt;/m:return&gt;
         &lt;/m:SayNameResponse&gt;
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
+</code></pre><p>Возвращаемый ответ должен содержать xml следующего вида (в теге m:return)</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;data&gt;
+    &lt;title&gt;Фэйковый чиж&lt;/title&gt;    //название клиента
+    &lt;category&gt;0&lt;/category&gt;         //категория клиента
+    &lt;manager&gt; 
+        &lt;phone&gt;244&lt;/phone&gt;         //телефон ответственного менеджера
+    &lt;/manager&gt;
+&lt;/data&gt;
 </code></pre><h2 id="-">Отображение карточки о звонящем</h2>
 <p>В интерфейсе 1С пользователя 1С появляется карточка абонента во время звонка.</p>
-<p>Необходимо реализовать интерфейс веб-сервиса, который будет принимать данные во время звонка.</p>
-<p>Пример запроса от Виртуальной АТС Мобилон (в секции number передается номер звонящего, в секции key - ключ абонента):</p>
+<h3 id="-">Пример</h3>
+<p>Запрос (от Виртуальной АТС Мобилон)</p>
+<ul>
+<li><p>в секции NumFrom передается номер звонящего</p>
+</li>
+<li><p>в секции Key - ключ абонента</p>
+</li>
+</ul>
 <pre><code>curl -X POST -H &quot;Authorization: Basic U09BUDoxMjM=&quot; -H &quot;Content-Type: text/xml&quot; -H &quot;Cache-Control: no-cache&quot; -d &#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
     &lt;soap:Body&gt;
@@ -134,7 +165,7 @@
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 &#39; &quot;http://&lt;ваш ip&gt;/telephony/ws/VATS&quot;
-</code></pre><p>Пример ответа от веб-сервиса 1С:</p>
+</code></pre><p>Ответ (от веб-сервиса 1С)</p>
 <pre><code>&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
     &lt;soap:Body&gt;
         &lt;m:IncomingCallResponse xmlns:m=&quot;http://VATS&quot;&gt;
