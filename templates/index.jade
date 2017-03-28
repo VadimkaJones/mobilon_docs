@@ -15,6 +15,7 @@ style.
 block main
   .container
     .row
+    
       .col-md-4.col-sm-4.col-xs-12
         .panel.panel-default.my_panel
           .panel-body
@@ -28,6 +29,14 @@ block main
                 a(href='/vpbx/integration/') Интеграция с CRM
               li 
                 a(href='/vpbx/api.html') API
+
+            h3 Звонок с сайта
+            ul
+              li
+                a(href='/webcall/') Об услуге
+              li
+                a(href='/webcall/design.html') Оформление
+
 
 
       .col-md-4.col-sm-4.col-xs-12
@@ -43,29 +52,6 @@ block main
                 a(href='/sms/api.html') API
 
 
-      .col-md-4.col-sm-4.col-xs-12
-        .panel.panel-default.my_panel
-          .panel-body
-            img.img-responsive.center-block(src='images/3.png', alt='')
-          .panel-footer
-            h3 Звонок с сайта
-            ul
-              li
-                a(href='/webcall/') Об услуге
-              li
-                a(href='/webcall/design.html') Оформление
-
-
-      .col-md-4.col-sm-4.col-xs-12
-        .panel.panel-default.my_panel
-          .panel-body
-            img.img-responsive.center-block(src='images/3.jpg', alt='')
-          .panel-footer
-            h3 Оборудование
-            ul
-              li
-                a(href='/equipment/') Список
-
 
       .col-md-4.col-sm-4.col-xs-12
         .panel.panel-default.my_panel
@@ -75,14 +61,13 @@ block main
             h3 Удаленная поддержка
             ul
               li
-                a(href='/support/') Узнать больше
+                a(href='/support/') Программы для удаленной поддержки
 
+            h3 Оборудование
+            ul
+              li
+                a(href='/equipment/') Инструкции по настройке
 
-      .col-md-4.col-sm-4.col-xs-12
-        .panel.panel-default.my_panel
-          .panel-body
-            img.img-responsive.center-block(src='images/7.jpg', alt='')
-          .panel-footer
             h3 Оплата услуг
             ul
               li
