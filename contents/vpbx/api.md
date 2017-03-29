@@ -104,16 +104,20 @@ curl -X GET "https://connect.mobilon.ru/api/call/CallToSubscriber?key={userkey}&
 В результате выполнения инициации звонка возвращается callid, по которому позже можно получить информацию о звонке
 
 `````
-https://connect.mobilon.ru/api/call/info?token={token}&callid={callid}
+https://connect.mobilon.ru/api/call/info?token={token}&callid={callid}&format={json|xml}
 
 `````
-где {token} - это токен аккаунта, {callid} - id звонка.
+
+- {token} - токен аккаунта, 
+- {callid} - id звонка, 
+- {json|xml} - формат возвращаемых данных json или xml
 
 Возвращает результат
 
 `````
 <?xml version="1.0" encoding="UTF-8"?>
 <call>
+  <callid>1324324.8997834</callid>
   <status>ANSWERED</status>
   <record_url>/api/call/record?token={token}&callid={callid}</record_url>
   <duration>203</duration>
@@ -133,10 +137,13 @@ xml содержит ссылку на запись звонка
 Есть возможность получить информацию о звонках за определенный день
 
 `````
-https://connect.mobilon.ru/api/call/journal?token={token}&date={date}
+https://connect.mobilon.ru/api/call/journal?token={token}&date={date}&format={json|xml}
 
 `````
-где {token} - это токен аккаунта, {date} - дата (в формате ГГГГ-ММ-ДД).
+
+- {token} - токен аккаунта, 
+- {date} - дата (в формате ГГГГ-ММ-ДД),
+- {json|xml} - формат возвращаемых данных json или xml
 
 Возвращает результат
 
@@ -144,6 +151,7 @@ https://connect.mobilon.ru/api/call/journal?token={token}&date={date}
 <?xml version="1.0" encoding="UTF-8"?>
 <calls>
   <call>
+    <callid>32423423.324324</callid>
     <status>ANSWERED</status>
     <duration>113</duration>
     <from>81234567890</from>
@@ -151,6 +159,7 @@ https://connect.mobilon.ru/api/call/journal?token={token}&date={date}
     <time>2015-04-28 13:12:00</time>
   </call>
   <call>
+    <callid>32423423.323242</callid>
     <status>ANSWERED</status>
     <record_url>/api/call/record?token={token}&callid={callid}</record_url>
     <duration>203</duration>

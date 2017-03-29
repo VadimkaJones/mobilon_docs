@@ -153,11 +153,16 @@
 КонецПроцедуры
 </code></pre><h4 id="-callid">получение информации о звонке по callid</h4>
 <p>В результате выполнения инициации звонка возвращается callid, по которому позже можно получить информацию о звонке</p>
-<pre><code>https://connect.mobilon.ru/api/call/info?token={token}&amp;callid={callid}
-</code></pre><p>где {token} - это токен аккаунта, {callid} - id звонка.</p>
+<pre><code>https://connect.mobilon.ru/api/call/info?token={token}&amp;callid={callid}&amp;format={json|xml}
+</code></pre><ul>
+<li>{token} - токен аккаунта, </li>
+<li>{callid} - id звонка, </li>
+<li>{json|xml} - формат возвращаемых данных json или xml</li>
+</ul>
 <p>Возвращает результат</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;call&gt;
+  &lt;callid&gt;1324324.8997834&lt;/callid&gt;
   &lt;status&gt;ANSWERED&lt;/status&gt;
   &lt;record_url&gt;/api/call/record?token={token}&amp;callid={callid}&lt;/record_url&gt;
   &lt;duration&gt;203&lt;/duration&gt;
@@ -168,12 +173,17 @@
 </code></pre><p>xml содержит ссылку на запись звонка</p>
 <h4 id="-">получение информации о звонках за период</h4>
 <p>Есть возможность получить информацию о звонках за определенный день</p>
-<pre><code>https://connect.mobilon.ru/api/call/journal?token={token}&amp;date={date}
-</code></pre><p>где {token} - это токен аккаунта, {date} - дата (в формате ГГГГ-ММ-ДД).</p>
+<pre><code>https://connect.mobilon.ru/api/call/journal?token={token}&amp;date={date}&amp;format={json|xml}
+</code></pre><ul>
+<li>{token} - токен аккаунта, </li>
+<li>{date} - дата (в формате ГГГГ-ММ-ДД),</li>
+<li>{json|xml} - формат возвращаемых данных json или xml</li>
+</ul>
 <p>Возвращает результат</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;calls&gt;
   &lt;call&gt;
+    &lt;callid&gt;32423423.324324&lt;/callid&gt;
     &lt;status&gt;ANSWERED&lt;/status&gt;
     &lt;duration&gt;113&lt;/duration&gt;
     &lt;from&gt;81234567890&lt;/from&gt;
@@ -181,6 +191,7 @@
     &lt;time&gt;2015-04-28 13:12:00&lt;/time&gt;
   &lt;/call&gt;
   &lt;call&gt;
+    &lt;callid&gt;32423423.323242&lt;/callid&gt;
     &lt;status&gt;ANSWERED&lt;/status&gt;
     &lt;record_url&gt;/api/call/record?token={token}&amp;callid={callid}&lt;/record_url&gt;
     &lt;duration&gt;203&lt;/duration&gt;
