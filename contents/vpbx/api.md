@@ -120,11 +120,14 @@ https://connect.mobilon.ru/api/call/info?token={token}&callid={callid}&format={j
   <callid>1324324.8997834</callid>
   <status>ANSWERED</status>
   <record_url>/api/call/record?token={token}&callid={callid}</record_url>
+  <has_record>1</has_record>
   <duration>203</duration>
   <from>81234567890</from>
   <direction>OUTGOING</direction>
   <to>123123</to>
   <time>2015-04-28 12:00:00</time>
+  <operator_id>125000099</operator_id>
+  <subscriber_id>20000099</subscriber_id>
 </call>
 
 `````
@@ -151,25 +154,21 @@ https://connect.mobilon.ru/api/call/journal?token={token}&date={date}&format={js
 `````
 <?xml version="1.0" encoding="UTF-8"?>
 <calls>
-  <call>
-    <callid>32423423.324324</callid>
-    <status>ANSWERED</status>
-    <duration>113</duration>
-    <from>81234567890</from>
-    <direction>OUTGOING</direction>
-    <to>987315</to>
-    <time>2015-04-28 13:12:00</time>
-  </call>
+  ....
   <call>
     <callid>32423423.323242</callid>
     <status>ANSWERED</status>
     <record_url>/api/call/record?token={token}&callid={callid}</record_url>
+    <has_record>1</has_record>
     <duration>203</duration>
     <from>81234567890</from>
     <direction>OUTGOING</direction>
     <to>123123</to>
     <time>2015-04-28 12:00:00</time>
+    <operator_id>125000099</operator_id>
+    <subscriber_id>20000099</subscriber_id>
   </call>
+  ....
 </calls>
 
 `````

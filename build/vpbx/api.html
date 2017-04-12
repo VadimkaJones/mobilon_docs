@@ -165,11 +165,14 @@
   &lt;callid&gt;1324324.8997834&lt;/callid&gt;
   &lt;status&gt;ANSWERED&lt;/status&gt;
   &lt;record_url&gt;/api/call/record?token={token}&amp;callid={callid}&lt;/record_url&gt;
+  &lt;has_record&gt;1&lt;/has_record&gt;
   &lt;duration&gt;203&lt;/duration&gt;
   &lt;from&gt;81234567890&lt;/from&gt;
   &lt;direction&gt;OUTGOING&lt;/direction&gt;
   &lt;to&gt;123123&lt;/to&gt;
   &lt;time&gt;2015-04-28 12:00:00&lt;/time&gt;
+  &lt;operator_id&gt;125000099&lt;/operator_id&gt;
+  &lt;subscriber_id&gt;20000099&lt;/subscriber_id&gt;
 &lt;/call&gt;
 </code></pre><p>xml содержит ссылку на запись звонка</p>
 <h4 id="-">получение информации о звонках за период</h4>
@@ -183,25 +186,21 @@
 <p>Возвращает результат</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;calls&gt;
-  &lt;call&gt;
-    &lt;callid&gt;32423423.324324&lt;/callid&gt;
-    &lt;status&gt;ANSWERED&lt;/status&gt;
-    &lt;duration&gt;113&lt;/duration&gt;
-    &lt;from&gt;81234567890&lt;/from&gt;
-    &lt;direction&gt;OUTGOING&lt;/direction&gt;
-    &lt;to&gt;987315&lt;/to&gt;
-    &lt;time&gt;2015-04-28 13:12:00&lt;/time&gt;
-  &lt;/call&gt;
+  ....
   &lt;call&gt;
     &lt;callid&gt;32423423.323242&lt;/callid&gt;
     &lt;status&gt;ANSWERED&lt;/status&gt;
     &lt;record_url&gt;/api/call/record?token={token}&amp;callid={callid}&lt;/record_url&gt;
+    &lt;has_record&gt;1&lt;/has_record&gt;
     &lt;duration&gt;203&lt;/duration&gt;
     &lt;from&gt;81234567890&lt;/from&gt;
     &lt;direction&gt;OUTGOING&lt;/direction&gt;
     &lt;to&gt;123123&lt;/to&gt;
     &lt;time&gt;2015-04-28 12:00:00&lt;/time&gt;
+    &lt;operator_id&gt;125000099&lt;/operator_id&gt;
+    &lt;subscriber_id&gt;20000099&lt;/subscriber_id&gt;
   &lt;/call&gt;
+  ....
 &lt;/calls&gt;
 </code></pre><h3 id="webhooks">Webhooks</h3>
 <p>Веб-хуки - адреса в сети интернет, которые могут быть запрошены во время обработки звонков Виртуальной АТС.</p>
