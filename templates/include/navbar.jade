@@ -10,15 +10,23 @@ nav.navbar.navbar-default.navbar-fixed-top
 
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav
-        li
-          a(href='/vpbx/') Виртуальная АТС
-        li
-          a(href='/sms/') СМС-рассылка
-        li
-          a(href='/webcall/') Звонок с сайта
+        li.dropdown 
+          a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") Сервисы Виртуальной АТС 
+            span.caret
+          ul.dropdown-menu
+            li
+              a(href='/vpbx/') Виртуальная АТС
+            li
+              a(href='/sms/') СМС-рассылка
+            li
+              a(href='/webcall/') Звонок с сайта
+            li
+              a(href='/marketing/') Оцени рекламу
         li
           a(href='/equipment/') Оборудование
 
+
+         
 
       ul.nav.navbar-nav.navbar-right
         li
